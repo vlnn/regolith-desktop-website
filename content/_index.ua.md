@@ -10,38 +10,35 @@ bookToc: false
 
 {{< columns >}}
 
-### Продуктивність Понад Усе
+### Продуктивність понад усе
 
-Regolith заснований на [i3](https://i3wm.org/): поширеному, швидкому, та настроюваному мозаїчному менеджері вікон, що чудово підходить для швидкого робочого процеса з використанням гарячих клавіш. Regolith поєднує i3 з іншими компонентами робочого столу, такими як  `i3bar`, `rofication`, `gnome-flashback`, та  [`ilia`](https://github.com/regolith-linux/ilia#readme), щоб надати повний інтерфейс робочого столу.
+Regolith оснований на [i3](https://i3wm.org/): поширеному, швидкому, та настроюваному мозаїчному менеджері вікон, що чудово підходить для швидкого робочого процесу з використанням гарячих клавіш. Regolith поєднує i3 з іншими компонентами робочого столу, такими як  `i3bar`, `rofication`, `gnome-flashback` та  [`ilia`](https://github.com/regolith-linux/ilia#readme), щоб сформувати повноцінний інтерфейс робочого столу.
 
 <--->
 
-### GNOME System Management
+### Системне управління GNOME
 
-By providing a gnome session with [`gnome-flashback`](https://wiki.gnome.org/Projects/GnomeFlashback), Regolith sidesteps
-much of the complexity of a typical `gnome-shell` based environment while providing
-simple and consistent system management capabilities.
+Regolith використовує механізм gnome-сесій [`gnome-flashback`](https://wiki.gnome.org/Projects/GnomeFlashback), тому він простіший за стандартні робочі середовища, що базуються на `gnome-shell`. Водночас, це робить можливим просте та послідовне управління системою.
 
 {{< /columns >}}
 
 ***
 
-# Get Regolith 2.1
+# Встановіть Regolith 2.1
 
 {{< tabs "uniqueid" >}}
 {{< tab "Ubuntu 22.04" >}}
 
-Regolith can be installed as system packages.  This makes updating and removing easier and more consistent.  The following steps (also available as a [downloadable script](/install-release-ubuntu-22.04-amd64.txt)) describe how
-to configure your system to read packages from the Regolith package repository and install the desktop package.
+Regolith можна встановити як системний пакет. Це зробить оновлення та видалення простішим та більш послідовним. Наступні кроки (також доступні у вигляді [скріпта, що можна завантажити](/install-release-ubuntu-22.04-amd64.txt)) описують, як налаштувати вашу систему, аби завантажити пакети з репозіторія Regolith, та встановити пакет робочего столу.
 
-1. Register the Regolith public key to your local `apt`:
+1. Додайте публічний ключ Regolith до вашого локального `apt`:
 
    ```console
    wget -qO - https://regolith-desktop.org/regolith.key | \
    gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
    ```
 
-1. Add the repository URL to your local `apt`:
+1. Додайте URL репозиторія до вашого локального `apt`:
 
    ```console
    echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
@@ -50,10 +47,10 @@ to configure your system to read packages from the Regolith package repository a
    ```
 
 {{< hint info >}}
-Substitute `arm64` for `amd64` in the two places in the above line to install on ARM-based systems.
+Замініть `arm64` на `amd64` в двох місцях у попередньому рядку, якщо вашу систему побудовано на архітектурі ARM.
 {{< /hint >}}
 
-1. Update `apt` and install Regolith
+1. Оновіть `apt` та встановіть Regolith
 
    ```console
    sudo apt update
@@ -62,31 +59,31 @@ Substitute `arm64` for `amd64` in the two places in the above line to install on
    ```
 
 {{< hint info >}}
-The `regolith-desktop` package installs a reasonable minimal configuration that should work on most hardware. To add additional package for a richer and more functional environment read [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
+Пакет `regolith-desktop` включає в себе мінімальну (але функціональну) систему, що буде працювати на більшості обладнання. Аби розширити функціональність за допомогою додаткових пакетів, ознайомтесь з [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
 {{< /hint >}}
 
-1. System Restart
+1. Перезапуск Системи
 
-The login manager will need to be restarted for the new desktop session to be recognized. The easiest way of restarting it is to reboot your system.
+Задля того, щоб можна було розпочати сесію в новому робочому середовищі, потрібно перезапустити менеджер входу (login manager). Якщо ви не знаєте, як це зробити, просто перезавантажте свій комп'ютер.
 
 {{< hint warning >}}
-The Regolith Desktop is very different from common desktop environments. By default it does not use docks, icon folders, or global drop-down menus.  See the [Getting Started guide]({{< ref "/docs/using-regolith/first-launch" >}}) for important details.
+Робочий стіл Regolith Desktop дуже відрізняється від звичайних робочих середовищ. За замовчуванням на ньому немає доків, значків папок, або стандартних спадних меню. Ознайомтесь з [Getting Started guide]({{< ref "/docs/using-regolith/first-launch" >}}), аби дізнатися важливі деталі.
+
 {{< /hint >}}
 
 {{< /tab >}}
 
 {{< tab "Ubuntu 20.04" >}}
 
-Regolith can be installed as system packages.  This makes updating and removing easier and more consistent.  The following steps (also available as a [downloadable script](/install-release-ubuntu-20.04-amd64.txt)) describe how
-to configure your system to read packages from the Regolith package repository and install the desktop package.
+Regolith можна встановити як системний пакет. Це зробить оновлення та видалення простішим та більш послідовним. Наступні кроки (також доступні у вигляді [скріпта, що можна завантажити](/install-release-ubuntu-20.04-amd64.txt)) описують, як налаштувати вашу систему, аби завантажити пакети з репозиторія Regolith, та встановити пакет робочего столу.
 
-1. Register the Regolith public key to your local `apt`:
+1. Додайте публічний ключ Regolith до вашого локального `apt`:
 
    ```console
    wget -qO - https://regolith-desktop.org/regolith.key | sudo apt-key add -
    ```
 
-1. Add the repository URL to your local `apt`:
+1. Додайте URL репозиторія до вашого локального `apt`:
 
    ```console
    echo deb "[arch=amd64] https://regolith-desktop.org/release-ubuntu-focal-amd64 focal main" | \
@@ -94,10 +91,10 @@ to configure your system to read packages from the Regolith package repository a
    ```
 
 {{< hint info >}}
-Substitute `arm64` for `amd64` in the two places in the above line to install on ARM-based systems.
+Замініть `arm64` на `amd64` в двох місцях у попередньому рядку, якщо вашу систему побудовано на архітектурі ARM.
 {{< /hint >}}
 
-1. Update `apt` and install Regolith
+1. Оновіть `apt` та встановіть Regolith
 
    ```console
    sudo apt update
@@ -106,28 +103,27 @@ Substitute `arm64` for `amd64` in the two places in the above line to install on
    ```
 
 {{< hint info >}}
-The `regolith-desktop` package installs a reasonable minimal configuration that should work on most hardware. To add additional package for a richer and more functional environment read [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
+Пакет `regolith-desktop` включає в себе мінімальну (але функціональну) систему, що буде працювати на більшості обладнання. Аби розширити функціональність за допомогою додаткових пакетів, ознайомтесь з [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
 {{< /hint >}}
 
-1. System Restart
+1. Перезапуск Системи
 
-The login manager will need to be restarted for the new desktop session to be recognized. The easiest way of restarting it is to reboot your system.
+Задля того, щоб можна було розпочати сесію в новому робочому середовищі, потрібно перезапустити менеджер входу (login manager). Якщо ви не знаєте, як це зробити, просто перезавантажте свій комп'ютер.
 
 {{< /tab >}}
 
 {{< tab "Debian Bullseye" >}}
 
-Regolith can be installed as system packages.  This makes updating and removing easier and more consistent.  The following steps (also available as a [downloadable script](/install-release-debian-11-amd64.txt)) describe how
-to configure your system to read packages from the Regolith package repository and install the desktop package.
+Regolith можна встановити як системний пакет. Це зробить оновлення та видалення простішим та більш послідовним. Наступні кроки (також доступні у вигляді [скріпта, що можна завантажити](/install-release-debian-11-amd64.txt)) описують, як налаштувати вашу систему, аби завантажити пакети з репозиторія Regolith, та встановити пакет робочего столу.
 
-1. Register the Regolith public key to your local `apt`:
+1. Додайте публічний ключ Regolith до вашого локального `apt`:
 
    ```console
    wget -qO - https://regolith-desktop.org/regolith.key | \
    gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
    ```
 
-1. Add the repository URL to your local `apt`:
+1. Додайте URL репозиторія до вашого локального `apt`:
 
    ```console
    echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
@@ -135,10 +131,10 @@ to configure your system to read packages from the Regolith package repository a
    sudo tee /etc/apt/sources.list.d/regolith.list
    ```
 {{< hint info >}}
-Substitute `arm64` for `amd64` in the two places in the above line to install on ARM-based systems.
+Замініть `arm64` на `amd64` в двох місцях у попередньому рядку, якщо вашу систему побудовано на архітектурі ARM.
 {{< /hint >}}
 
-1. Update `apt` and install Regolith
+1. Оновіть `apt` та встановіть Regolith
 
    ```console
    sudo apt update
@@ -147,39 +143,39 @@ Substitute `arm64` for `amd64` in the two places in the above line to install on
    ```
 
 {{< hint info >}}
-The `regolith-desktop` package installs a reasonable minimal configuration that should work on most hardware. To add additional package for a richer and more functional environment read [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
+Пакет `regolith-desktop` включає в себе мінімальну (але функціональну) систему, що буде працювати на більшості обладнання. Аби розширити функціональність за допомогою додаткових пакетів, ознайомтесь з [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
 {{< /hint >}}
 
-1. System Restart
+1. Перезапуск Системи
 
-The login manager will need to be restarted for the new desktop session to be recognized. The easiest way of restarting it is to reboot your system.
+Задля того, щоб можна було розпочати сесію в новому робочому середовищі, потрібно перезапустити менеджер входу (login manager). Якщо ви не знаєте, як це зробити, просто перезавантажте свій комп'ютер.
 
 {{< /tab >}}
-{{< tab "Regolith Linux 2.1 ISO" >}} 
+{{< tab "Образ Regolith Linux 2.1 ISO" >}}
 
-Regolith Linux is the Regolith Desktop environment installed into a customized Ubuntu 22.04 installer image.  It allows one to boot from a USB drive to run Regolith without having to install it. It also allows to install the system onto a computer's drive.  Regolith Linux has the following features in addition to the Regolith Desktop:
+Regolith Linux -- це середовище Regolith Desktop, що встановлено у спеціально налаштований образ інсталятора Ubuntu 22.04.  Він дозволяє завантажитися з USB диска і запустити Regolith без інсталляції. Він також дозволяє встановити Regolith Linux на диск вашого комп'ютера. Regolith Linux відрізняється від Regolith Desktop наступними додатковими можливостями:
 
-* Regolith-branded boot and login screens
-* Uses the `lightdm` display manager over `gdm3` to avoid unneeded dependencies
-* The following packages are not installed: `gdm3`, `gnome-shell`, `ubuntu-session`, `evolution-data-server`, `snapd`.  These packages may be installed as needed by the user.
+* Логотип Regolith під час завантаження та на екрані входу
+* Використання менеджера екранів `lightdm` замість `gdm3`, щоб уникнути зайвих залежностей
+* Наступні пакети не встановлено за замовчуванням: `gdm3`, `gnome-shell`, `ubuntu-session`, `evolution-data-server`, `snapd`.  Їх можна встановити за потреби додатково.
 
-The ISO comes in two forms, a "mini" ISO which includes a paired down experience and only includes the default look.  The default ISO is somewhat bigger but includes built-in support for all official Looks and comes installed with a few more status indicators.
+Образ диска ISO поставляється у двох форматах: "mini ISO" з дещо зменшеними можливостями та тільки одною візуальною темою, та "default ISO", який дещо більший за розміром, але має вбудовану підтримку всіх офіційних тем та встановлюється з дещо більшою кількістю індикаторів стану.
 
 * [Regolith Linux 2.1.1](https://github.com/regolith-linux/regolith-ubuntu-iso-builder/releases/download/ubuntu-jammy-2.1.1-20220807_181202/regolith-ubuntu-jammy-2.1.1.zip)
 * [Regolith Linux 2.1.1 Mini](https://github.com/regolith-linux/regolith-ubuntu-iso-builder/releases/download/mini-ubuntu-jammy-2.1.1-20220807_180918/regolith-mini-ubuntu-jammy-2.1.1.zip)
 
-See the [Regolith 2.1 release notes](docs/reference/Releases/regolith-2.1-release-notes) for more information.
+За додатковою інформацією зверніться до [Regolith 2.1 release notes](docs/reference/Releases/regolith-2.1-release-notes).
 
-The ISO can be written to a USB drive on Linux using [dd](https://www.man7.org/linux/man-pages/man1/dd.1.html), [GNOME Disk Utility](https://wiki.gnome.org/Apps/Disks), or the [KDE ISO Image Writer](https://community.kde.org/ISOImageWriter). On macOS, use [Etcher](https://www.balena.io/etcher/). On Windows, use [Rufus](https://rufus.ie/) and write in DD mode.
+В різних операційних системах образ ISO записується на USB диск по-різному: у Linux використовуйте [dd](https://www.man7.org/linux/man-pages/man1/dd.1.html), [GNOME Disk Utility](https://wiki.gnome.org/Apps/Disks), чи [KDE ISO Image Writer](https://community.kde.org/ISOImageWriter). У macOS використовуйте [Etcher](https://www.balena.io/etcher/). У Windows використовуйте [Rufus](https://rufus.ie/) та робіть запис у режимі DD mode.
 
 {{< /tab >}}
-{{< tab "Upgrade from Regolith 1.6" >}}
+{{< tab "Оновлення з Regolith 1.6" >}}
 
-To install Regolith 2 into an existing Ubuntu system that is upgrading to 22.04, follow these steps:
+Щоб встановити Regolith 2 поверх існуючої системи Ubuntu, що можливо оновити до версії 22.04, виконайте наступні дії:
 
-1. Upgrade the system to all the latest packages on current release (either Ubuntu 20.04 or 21.10)
-1. Perform the [Ubuntu system upgrade to 22.04](https://www.omgubuntu.co.uk/2022/04/how-to-upgrade-to-ubuntu-22-04-lts), however **DO NOT** reboot as prompted **until the following steps are completed**
-1. After the 22.04 upgrade completes, add the Regolith 2 package repository:
+1. Оновіть систему до найновітніших пакетів, доступних у поточній версії (або Ubuntu 20.04 або 21.10)
+1. Виконайте [оновлення Ubuntu до 22.04](https://www.omgubuntu.co.uk/2022/04/how-to-upgrade-to-ubuntu-22-04-lts), але **НЕ ПЕРЕЗАВАНТАЖУЙТЕСЬ ДОПОКИ НЕ ВИКОНАЄТЕ НАСТУПНИХ ДІЙ!**
+1. Одразу після оновлення до 22.04, додайте репозиторій Regolith 2:
 
    ```console
    wget -qO - https://regolith-desktop.org/regolith.key | gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
@@ -188,7 +184,7 @@ To install Regolith 2 into an existing Ubuntu system that is upgrading to 22.04,
    sudo apt update
    ```
 
-1. Next install the Regolith 2 desktop package:
+1. Далі установіть пакет з Regolith 2:
 
    ```console
    sudo apt install regolith-desktop
@@ -196,77 +192,77 @@ To install Regolith 2 into an existing Ubuntu system that is upgrading to 22.04,
    ```
 
 {{< hint info >}}
-The `regolith-desktop` package installs a reasonable minimal configuration that should work on most hardware. To add additional package for a richer and more functional environment read [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
+Пакет `regolith-desktop` включає в себе мінімальну (але функціональну) систему, що буде працювати на більшості обладнання. Аби розширити функціональність за допомогою додаткових пакетів, ознайомтесь з [Recommended Packages for New Users](/docs/using-regolith/configuration/#recommended-packages-for-new-users).
 {{< /hint >}}
 
-1. Now reboot the system and select the regolith session at the login screen
+1. Далі перезавантажте систему та оберіть сесію regolith під час входу в систему
 
-Custom configurations from Regolith 1.6 will need to be manually ported to Regolith 2.  In order to make this upgrade simpler, Regolith 2 uses the user config directory of `~/.config/regolith2`.  It will not read files from the Regolith 1.x user config directory `~/.config/regolith`.  Please refer to [the configuration page](docs/using-regolith/configuration) for more details.
+Індивідуальні конфігурації з Regolith 1.6 потрібно вручну змінити так, щоб вони працювали з Regolith 2.  Задля того, щоб спростити цей процес, Regolith 2 читає налаштування користувача з директорії `~/.config/regolith2`.  Він не читає конфігураційні файли Regolith 1.x з директорії `~/.config/regolith`.  Будь ласка, прочтіть [the configuration page](docs/using-regolith/configuration) за більш деталізованим описом конфігурації.
 
 {{< /tab >}}
 {{< /tabs >}}
 
 
-## Visual Tour
+## Візуальний тур
 ***
 
 {{< columns >}}
 
 ![](/regolith-ilia-keybindings.png)
-Upon first login, an overlay (toggled anytime via <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">?</span></span>) presents the most important keybindings used with i3-wm.
+Після першого запуска з'явиться допоміжне вікно (його можна де-активувати чи активувати знов за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">?</span></span>) з найважливішими клавіатурними командами, що використовуються в i3-wm.
 
 <--->
 
 ![](/regolith-floating-terminal.png)
-For those that work in the terminal, pressing <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">enter</span></span> is all it takes to get to business.
+Якщо ви звикли працювати в терміналі, все що вам потрібно, аби почати роботу, це натиснути <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">enter</span></span>.
 
 {{< /columns >}}
 
 {{< columns >}}
 
 ![](/regolith-ilia-apps.png)
-A single global app launcher is instantly available from anywhere to run your programs via <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">space</span></span>.</p>
+Запускайте будь-які застосунки через єдиний глобальний інтерфейс за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">space</span></span>.</p>
 
 <--->
 
 ![](/regolith-desktop-terminals.png)
-Need more terminals?  Create layouts on the fly by toggling between horizontal and vertical modes with <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">backspace</span></span> followed by <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">enter</span></span>.  Navigate to windows positionally with <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">h</span> <span class="badge badge-warning">j</span> <span class="badge badge-warning">k</span> <span class="badge badge-warning">l</span></span>.
+Потрібно більше терміналів? Створюйте різні розкладки вікон на льоту, перемикайтесь між горизонтальним та вертикальним розміщеннями вікон за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">backspace</span></span>, а після <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">enter</span></span>.  Перемикайтесь між вікнами за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">h</span> <span class="badge badge-warning">j</span> <span class="badge badge-warning">k</span> <span class="badge badge-warning">l</span></span>.
 
 {{< /columns >}}
 
 {{< columns >}}
 
 ![](/regolith-floating-windows.png)
-Toggle floating window mode with <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">F</span></span>.  Resize windows with <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">r</span></span> and move them around with the mouse by pressing <span class="badge badge-warning">super</span>.
+Вмикайте і вимикайте режим плаваючого вікна за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">F</span></span>.  Змінюйте розміри вікна з <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">r</span></span> та переміщайте його по екрану мишою, одночасно натискаючи клавішу <span class="badge badge-warning">super</span>.
 
 <--->
 
 ![](/regolith-gnome-flashback.png)
-Gnome Flashback provides consistent and simple system management. Tweak your UI, auto mount your USB drives, connect to wireless networks. Launch the control panel with <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">c</span></span>.
+Gnome Flashback надає можливості послідовного та простого управління системою. Підлаштовуйте інтерфейс користувача, автоматично підключайте USB диски, підключайтесь до бездротових мереж. Запустіть контрольну панель за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">c</span></span>.
 
 {{< /columns >}}
 
 {{< columns >}}
 
 ![](/regolith-screenshot-look-selector.png)
-Easily switch to <a href="https://ethanschoonover.com/solarized">Solarized</a> or other looks with the <code>regolith-look</code> command. Because <b>looks</b> utilize the package manager, you only store theme resources that you're using.
+Легко переключайтесь до будь-яких тем (наприклад <a href="https://ethanschoonover.com/solarized">Solarized</a>) командою <code>regolith-look</code>. Оскільки <b>теми (looks)</b> використовують пакетний менеджер, на ваш диск встановляться лише ті ресурси, якими ви користуєтесь.
 
 <--->
 
 ![](/regolith-ilia-windows.png)
-Got a lot going on?  Quickly find the window you're looking for via <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">ctrl</span> <span class="badge badge-warning">space</span></span> or navigate over workspaces with <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">[0 - 19]</span></span>.
+Багато чого відбувається? Швидко знаходьте вікно, яке вам потрібне, за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">ctrl</span> <span class="badge badge-warning">space</span></span> або переходьте між робочими столами за допомогою <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">[0 - 19]</span></span>.
 
 {{< /columns >}}
 
 {{< columns >}}
 
 ![](/regolith-many-windows.png)
-Waste no space on frivolous UI and take advantage of every pixel without micro-managing your window layouts.
+Не витрачайте екранне місце на легковажний інтерфейс користувача, та використовуйте кожний піксель (і вам не буде потрібно вручну налаштовувати віконні розкладки).
 
 <--->
 
 ![](/regolith-ilia-notifications.png)
-Desktop notifications do not compete for your attention, but rather can be managed via an on-screen dialog by pressing <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">n</span></span>.
+Сповіщення вашого робочого столу не конкурують за вашу увагу, а просто зібрані у спеціальному вікні, яке можна визвати натисненням <span class="text-nowrap"><span class="badge badge-warning">super</span> <span class="badge badge-warning">n</span></span>.
 
 {{< /columns >}}
 
@@ -276,20 +272,20 @@ Desktop notifications do not compete for your attention, but rather can be manag
 
 ### Announcements
 
-* [Follow us on Twitter to get the latest news](https://twitter.com/RegolithL)
-* [Follow us on Mastodon to get the latest news](https://fosstodon.org/@regolith)
-* [Subscribe to the mailing list for release announcements](https://www.freelists.org/list/regolith-linux)
+* [Слідкуйте за нами на Twitter, щоб отримати останні новини](https://twitter.com/RegolithL)
+* [Слідкуйте за нами на Mastodon, щоб отримати останні новини](https://fosstodon.org/@regolith)
+* [Підпишіться на поштову розсилку для оголошень про нові релізи](https://www.freelists.org/list/regolith-linux)
 
 <--->
 
-### Discussion and Help
+### Обговорення та допомога
 
-* Join us on [GitHub Discussions](https://github.com/orgs/regolith-linux/discussions) for help and discussion
-* Search from [existing issues or create a new issue](https://github.com/regolith-linux/regolith-desktop/issues) for bugs and feature requests
+* Приєднуйтесь до нас у [Обговореннях GitHub](https://github.com/orgs/regolith-linux/discussions), якщо ви потребуєте допомоги чи бажаєте щось обговорити
+* Шукайте по [активним звітах о проблемах чи зробіть новий звіт](https://github.com/regolith-linux/regolith-desktop/issues) щоб отримати інформацію щодо програмних помилок та запитів на нові функції
 <--->
 
-### Development
+### Розробка
 
-* The [Regolith GitHub org](https://github.com/regolith-linux) is where development happens.
+* Вся розробка відбувається на [Regolith GitHub org](https://github.com/regolith-linux)
 
 {{< /columns >}}
